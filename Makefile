@@ -1,22 +1,22 @@
-CC = g++
+CC = clang++
 OTHERDIR=Engine
 OTHERDIRMAIN=Application
-CFLAGS = -Wall
+CFLAGS =-Wall
+FRAMEWORKS = -framework OpenGl -framework IOKit -framework Cocoa -framework Carbon
+LIBS = -lglfw -lglew
 RM=rm -f
-
-
 all: main 
-	$(RM) *.o
+	
 
-main: main.o PFX_init.o
-	$(CC) $(CFLAGS)  main.o PFX_init.o -o main
+main: main.o PFXInit.o PFXController.o
+	$(CC) $(CFLAGS) $(FRAMEWORKS) $(LIBS) main.o PFXInit.o PFXController.o -o main
 
-PFX_init.o: $(OTHERDIR)/PFX_init.cpp
-	$(CC) -c $(CFLAGS) $(OTHERDIR)/PFX_init.cpp
+PFXInit.o: $(OTHERDIR)/PFXInit.h
+	$(CC) -c $(CFLAGS)  $(OTHERDIR)/PFXInit.cpp
 main.o: $(OTHERDIRMAIN)/main.cpp
 	$(CC) -c $(CFLAGS) $(OTHERDIRMAIN)/main.cpp
-
-
+PFXController.o: $(OTHERDIR)/PFXController.h
+	$(CC) -c $(CFLAGS) $(OTHERDIR)/PFXController.cpp
 
 clean:
 	${RM} *.o main
