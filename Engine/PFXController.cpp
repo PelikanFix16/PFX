@@ -1,13 +1,12 @@
 #include "PFXController.h"
 
 
-void PFXController::processInput() {
+bool PFXController::processInput(int keycode) {
 
-   if(glfwGetKey(this->_window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
-        glfwSetWindowShouldClose(this->_window, true);
-        std::cout << "window was closed" << std::endl;
-   }
-
+    if(glfwGetKey(this->_window,keycode) == GLFW_PRESS)
+        return true;
+    else 
+        return false;
 }
 
 void PFXController::poolEvents() {

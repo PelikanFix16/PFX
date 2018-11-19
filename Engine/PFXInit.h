@@ -22,7 +22,7 @@ class PFXInit {
         void clearBuffer(float r,float g,float b,float a);
         void swapBuffer();
         inline GLFWwindow* getWindow() {return this->_window;};
-
+        void closeWindow();
 
     private:
         static void framebuffer_size_callback(GLFWwindow* window,int width,int height);

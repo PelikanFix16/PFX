@@ -75,4 +75,8 @@ void PFXInit::swapBuffer() {
 
 }
 
+void PFXInit::closeWindow() {
 
+    glfwSetWindowShouldClose(this->_window,true);
+
+}

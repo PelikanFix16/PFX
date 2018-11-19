@@ -10,7 +10,7 @@ class PFXController {
 
     public:
         PFXController(GLFWwindow* window);
-        void processInput();
+        bool processInput(int keycode);
         void poolEvents();
 
 

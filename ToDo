@@ -1,0 +1,20 @@
+1. Shader class
+    [x] 1.1. Load from shader file
+    [x] 1.2. Create Shader
+    [x] 1.3. Compile Shader
+    [x] 1.4. Check if shader is created
+    [x] 1.5. Create program
+    [x] 1.6. Attach shader
+    [x] 1.7. Delete shader
+    [x] 1.8. Save program
+2. Input class
+    [x] 2.1. Function get keycode and returns tryue if this key clicked
+
+3. Buffer class
+
+    [] 3.1 Create VAO,VBO and EBO
+    [] 3.2 Bind 
+    [] 3.3 Attrib function
+    [] 3.4
+
+
