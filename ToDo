@@ -17,4 +17,21 @@
     [] 3.3 Attrib function
     [] 3.4
 
+4. Model object loader class
+
+    [] 4.1 Load class from .obj file
+
+5. Texture loader class
+    
+    [] 5.1 Load texture to program 
+    [] 5.2 Save in buffer 
+6. Create Light class 
+    
+    [] 6.1 Create shader for light
+
+7. Create class matrix for moving camera and object
+
+8. Implement Collision Detection
+
+
 

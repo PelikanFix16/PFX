@@ -16,12 +16,24 @@ int main(int argc,char* argv[]) {
     shader->loadShader("./Engine/ShadersSrc/shader.fs",Shader::ShaderType::fragmentShader);
     shader->compileShader();
 
-    float vertices[5] = {0.5f,0.1f,-0.4f,0.23f,0.32f};
     Buffer* buf = new Buffer();
+    
+      float vertices[] = {
+         0.5f,  0.5f, 0.0f,  
+         0.5f, -0.5f, 0.0f,  
+        -0.5f, -0.5f, 0.0f,  
+        -0.5f,  0.5f, 0.0f  
+    };
 
-
-
-
+   unsigned int indices[] = { 
+        0, 1, 3,  
+        1, 2, 3   
+    };  
+  
+   buf->LoadVert(vertices,sizeof(vertices));
+   buf->AddAttrib(0,3,3,0);
+   buf->LoadIndices(indices,sizeof(indices));
+    
     while(!pfx->isClosedWindow()) {
 
         if(controller->processInput(256))
@@ -32,6 +44,7 @@ int main(int argc,char* argv[]) {
 
         shader->use();
 
+        buf->drawIndices();
 
         pfx->swapBuffer();
         controller->poolEvents();
@@ -39,8 +52,8 @@ int main(int argc,char* argv[]) {
 
    }
 
-    delete pfx;
     delete buf;
+    delete pfx;
 
     return 0;
 }
