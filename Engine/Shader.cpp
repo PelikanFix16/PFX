@@ -106,3 +106,15 @@ void Shader::use() {
     glUseProgram(this->_ID);
 
 }
+
+void Shader::setUniform4F(std::string name,float r,float g,float b,float a) {
+
+    glUniform4f(glGetUniformLocation(this->_ID,name.c_str()),r,g,b,a);
+
+}
+
+void Shader::setUniform1i(std::string name,int value) {
+
+    glUniform1i(glGetUniformLocation(this->_ID,name.c_str()),value);
+
+}

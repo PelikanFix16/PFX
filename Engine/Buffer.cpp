@@ -51,7 +51,7 @@ void Buffer::AddAttrib(unsigned int attrib,unsigned int sizeAttrib,unsigned int 
 
     this->bind();
     this->bindVBO();
-    glVertexAttribPointer(attrib,sizeAttrib,GL_FLOAT,GL_FALSE,jumpAttrib*sizeof(float),(void*)start);
+    glVertexAttribPointer(attrib,sizeAttrib,GL_FLOAT,GL_FALSE,jumpAttrib*sizeof(float),(void*)(start*sizeof(float)));
     glEnableVertexAttribArray(attrib);
     this->unbindVBO();
     this->unbind();
